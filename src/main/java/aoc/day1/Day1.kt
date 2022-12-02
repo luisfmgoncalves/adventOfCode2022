@@ -3,10 +3,10 @@ package aoc.day1
 import aoc.utils.FileUtils
 
 fun main() {
-    val readLines = FileUtils.readInput("day1").readLines()
+    val lines = FileUtils.readInput("day1").readLines()
 
     val calories = mutableListOf<Int>()
-    readLines.fold(0) { acc, element ->
+    lines.fold(0) { acc, element ->
         if (element.isEmpty()) {
             calories.add(acc)
             0
