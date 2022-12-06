@@ -15,10 +15,7 @@ fun run(input: String, segmentSize: Int) : Int {
     while (current + segmentSize <= input.length) {
         val chars = input.substring(current, current + segmentSize).toMutableList()
         val knowChars = mutableListOf<Char>()
-        for(c in chars) {
-            if (knowChars.contains(c)) { break }
-            else knowChars.add(c)
-        }
+        for(c in chars) { if (!knowChars.contains(c)) knowChars.add(c) else break }
         if(knowChars.size == segmentSize) { break }
         current++
     }
